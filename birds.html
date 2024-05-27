@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birds</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animal.css">
+</head>
+<body>
+    <header>
+        <h1>Birds</h1>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="gallery">
+        <div class="item cat" data-src="parrot.jpg" data-title="Parrot" data-origin="Origin: UK" data-description="Parrots, also known as psittacines, are birds with a strong curved beak, upright stance, and clawed feet. They are conformed by four families that contain roughly 410 species in 101 genera, found mostly in tropical and subtropical regions. 
+        Lifespan: Cockatoos: 40 – 60 years, 
+        Scientific name: Psittaciforme" onclick="showDetails(this)">
+            <img src="parrot.jpg" alt="">
+            <div class="info">
+                <h2>Parrot</h2>
+                <p>Origin: United State</p>
+                <button class="details-btn">Details</button>
+            </div>
+        </div>
+
+        <div class="item cat" data-src="canary.jpg" data-title="Canary" data-origin="Origin: uk" data-description="The domestic canary, often simply known as the canary, is a domesticated form of the wild canary, a small songbird in the finch family originating from the Macaronesian Islands. Canaries were first bred in captivity in the 17th century, having been brought to Europe by Spanish sailors.
+        Scientific name: Serinus canaria domestic
+        " onclick="showDetails(this)">
+            <img src="canary.jpg" alt="">
+            <div class="info">
+                <h2>Canary</h2>
+                <p>Origin: Portugal</p>
+                <button class="details-btn">Details</button>
+            </div>
+        </div>
+
+        <div class="item cat" data-src="sparrow.jpg" data-title="Sparrow" data-origin="Origin: Euroasia" data-description="Old World sparrows are a group of small passerine birds forming the family Passeridae. They are also known as true sparrows, a name also used for a particular genus of the family, Passer. 
+        Lifespan: House sparrow: 3 years"
+         onclick="showDetails(this)">
+            <img src="sparrow.jpg" alt="Cat 1">
+            <div class="info">
+                <h2>Sparrow</h2>
+                <p>Origin: Euroasia</p>
+                <button class="details-btn">Details</button>
+            </div>
+        </div>
+
+
+        <div class="item cat" data-src="owl.jpg" data-title="Alaskan Malamute" data-origin="Origin: Alaska
+        " data-description="TOwls are birds from the order Strigiformes, which includes over 200 species of mostly solitary and nocturnal birds of prey typified by an upright stance, a large, broad head, binocular vision, binaural hearing, sharp talons, and feathers adapted for silent flight. 
+        Term for young: fledgling, owlet Wikimedia Foundation
+        Scientific name: Strigiformes ". 
+       
+         onclick="showDetails(this)"> 
+            <img src="owl.jpg" alt="">
+            <div class="info">
+                <h2>Owl</h2>
+                <p>Origin: Alaska</p>
+                <button class="details-btn">Details</button>
+            </div>
+        </div>
+        
+    </main>
+
+    <div class="overlay" id="overlay" onclick="hidePopup()"></div>
+
+    <div class="popup" id="popup">
+        <img id="popup-img" src="" alt="">
+        <h2 id="popup-title"></h2>
+        <p id="popup-origin"></p>
+        <p id="popup-description"></p>
+        <button class="popup-close" onclick="hidePopup()">Close</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Animal Catalog.</p>
+    </footer>
+
+    <script>
+        function showDetails(button) {
+            var card = button.closest('.item');
+            var imgSrc = card.getAttribute('data-src');
+            var title = card.getAttribute('data-title');
+            var origin = card.getAttribute('data-origin');
+            var description = card.getAttribute('data-description');
+
+            document.getElementById('popup-img').src = imgSrc;
+            document.getElementById('popup-title').innerText = title;
+            document.getElementById('popup-origin').innerText = origin;
+            document.getElementById('popup-description').innerText = description;
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

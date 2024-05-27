@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+   
+    
+    <header>
+        <h1 c>Welcome to Animal Catalog</h1>
+        <nav>
+            <ul class="navbar">
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Animals</a>
+                    <div class="dropdown-content">
+                        <a href="cat.html">Cats</a>
+                        <a href="dog.html">Dogs</a>
+                        <a href="birds.html">Birds</a>
+                    </div>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+        </nav>
+        
+    </header>
+</head>
+<body>
+   
+    
+    <main>
+        
+       
+        <section id="photo">
+          
+               
+            <!-- search button-->
+            <div class="search-container">
+                 
+                <input type="text" id="searchInput" placeholder="Search here..cat..dog..birds">
+                <button onclick="searchAnimal()">Search</button>
+            </div>
+            <div id="results"></div>
+            <script src="script.js"></script>
+            
+            </div>
+        </section>
+       
+    </main>
+   
+    <footer>
+        <p>&copy; 2024 Animal Catalog. </p>
+    </footer>
+
+
+</body>
+</html>

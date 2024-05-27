@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animal.css">
+</head>
+<body>
+    <header>
+        <h1>Cats</h1>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="gallery">
+        <div class="item cat" data-src="siames.jpg" data-title="Siamese Cat" data-origin="Origin: Thailand" data-description="The Siamese cat is one of the first distinctly recognized breeds of Asian cat." onclick="showDetails(this)">
+            <img src="siames.jpg" alt="">
+            <div class="info">
+                <h2>Siamese Cat</h2>
+                <p>Origin: Thailand</p>
+                <button class="details-btn">Details</button>
+            </div>
+        </div>
+
+        <div class="item cat" data-src="persian1.jpg" data-title="Persian Cat" data-origin="Origin: Iran" data-description="The Persian cat, also known as the Persian Longhair, is a long-haired breed of cat characterised by a round face and short muzzle  The Persian cat, also known as the Persian Longhair, is a long-haired breed of cat characterised by a round face and short muzzle. 
+        Lifespan: 12 – 17 years
+        Origin:  Afghanistan
+        Temperament: Sweet-tempered, 
+        " onclick="showDetails(this)">
+            <img src="persian1.jpg" alt="">
+            <div class="info">
+                <h2>Persian Cat</h2>
+                <p>Origin: Iran</p>
+                <button class="details-btn">Details</button>
+            </div>
+        </div>
+
+        <div class="item cat" data-src="britishshorthair.jpg" data-title="British Cat" data-origin="Origin: UK" data-description="The British Shorthair is the pedigreed version of the traditional British domestic cat, with a distinctively stocky body, thick coat, and broad face. The most familiar colour variant is the British Blue with a solid grey-blue coat, pineapple eyes, and a medium-sized tail. 
+        Temperament: Undemanding, Intelligent, Easygoing, Affectionate, Quiet
+        Origin: Great Britain
+        Other names: British Blue (legacy)"
+         onclick="showDetails(this)">
+            <img src="britishshorthair.jpg" alt="">
+            <div class="info">
+                <h2>British Cat</h2>
+                <p>Origin: United Kingdom</p>
+                <button class="details-btn">Details</button>
+            </div>
+        </div>
+
+
+        <div class="item cat" data-src="Maine.jpg" data-title="Maine Cat" data-origin="Origin: UK" data-description="The Maine Coon is a large domesticated cat breed. It is one of the oldest natural breeds in North America. The breed originated in the U.S. state of Maine, where it is the official state cat.
+        Origin: Maine, United States
+        Temperament: Sociable, Trainable,
+        Mass: 8.2 – 10 kg 
+        CFA: standard
+        Common nicknames: Gentle giants
+        Other names: Coon Cat; ". 
+       
+         onclick="showDetails(this)"> 
+            <img src="Maine.jpg" alt="">
+            <div class="info">
+                <h2>Maine Cat</h2>
+                <p>Origin: United States</p>
+                <button class="details-btn">Details</button>
+            </div>
+        </div>
+        
+    </main>
+
+    <div class="overlay" id="overlay" onclick="hidePopup()"></div>
+
+    <div class="popup" id="popup">
+        <img id="popup-img" src="" alt="">
+        <h2 id="popup-title"></h2>
+        <p id="popup-origin"></p>
+        <p id="popup-description"></p>
+        <button class="popup-close" onclick="hidePopup()">Close</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Animal Catalog.</p>
+    </footer>
+
+    <script>
+        function showDetails(button) {
+            var card = button.closest('.item');
+            var imgSrc = card.getAttribute('data-src');
+            var title = card.getAttribute('data-title');
+            var origin = card.getAttribute('data-origin');
+            var description = card.getAttribute('data-description');
+
+            document.getElementById('popup-img').src = imgSrc;
+            document.getElementById('popup-title').innerText = title;
+            document.getElementById('popup-origin').innerText = origin;
+            document.getElementById('popup-description').innerText = description;
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

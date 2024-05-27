@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animal.css">
+</head>
+<body>
+    <header>
+        <h1>Dog</h1>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="gallery">
+        <div class="item cat" data-src="labrador.jpg" data-title="Labrador" data-origin="Origin: UK" data-description="The Labrador Retriever or simply Labrador is a British breed of retriever gun dog.Lifespan: 10 – 12 years (Adult)
+        Temperament: Even Tempered, Intelligent, Kind, Friendly, Agile, Outgoing, Gentle, Trusting
+        Hypoallergenic: No
+        Weight: 29-34kg
+        Colors: Black, Chocolate, Yellow
+        Origin: United Kingdom," onclick="showDetails(this)">
+            <img src="labrador.jpg" alt="">
+            <div class="info">
+                <h2>Labrador</h2>
+                <p>Origin: UK</p>
+                <button class="details-btn">Details</button>
+            </div>
+        </div>
+
+        <div class="item cat" data-src="beagle.jpg" data-title="Beagle" data-origin="Origin: uk" data-description="The beagle is a breed of small scent hound, similar in appearance to the much larger foxhound. The beagle was developed primarily for hunting hare, known as beagling. 
+        Life expectancy: 12 – 15 years
+        Temperament: Amiable, Curious, Even Tempered, Intelligent, MORE
+        Hypoallergenic: No
+        Height: 36-41cm
+        " onclick="showDetails(this)">
+            <img src="beagle.jpg" alt="">
+            <div class="info">
+                <h2>Beagle</h2>
+                <p>Origin: United Kingdom</p>
+                <button class="details-btn">Details</button>
+            </div>
+        </div>
+
+        <div class="item cat" data-src="germanshepherd.jpg" data-title="Germanshepherd" data-origin="Origin: Germany" data-description="The German Shepherd, also known in Britain as an Alsatian, is a German breed of working dog of medium to large size. The breed was developed by Max von Stephanitz using various traditional German herding dogs from 1899. It was originally bred as a herding dog, for herding sheep. Wikipedia
+        Life expectancy: 9 – 13 years
+        Temperament: Intelligent, Watchful, Courageous, Brave
+        Colors: Black,"
+         onclick="showDetails(this)">
+            <img src="germanshepherd.jpg" alt="">
+            <div class="info">
+                <h2>German shepherd</h2>
+                <p>Origin: Germany</p>
+                <button class="details-btn">Details</button>
+            </div>
+        </div>
+
+
+        <div class="item cat" data-src="alaskan.jpg" data-title="Alaskan Malamute" data-origin="Origin: Alaska
+        " data-description="The Alaskan Malamute is a large breed of dog that was originally bred for its strength and endurance, to haul heavy freight as a sled dog, and as a hound. It is similar to other arctic breeds such as the husky, the spitz, the Greenland Dog, Canadian Eskimo Dog, the Siberian Husky, and the Samoyed.
+        Temperament: Friendly, Playful, Affectionate, Loyal, Devoted, Dignified
+        Life expectancy: 10 – 14 years
+        Origin: Alaska
+        Colors: Gray & White, Sable & White ". 
+       
+         onclick="showDetails(this)"> 
+            <img src="alaskan.jpg" alt="">
+            <div class="info">
+                <h2>Alaskan Malamute</h2>
+                <p>Origin: Alaska</p>
+                <button class="details-btn">Details</button>
+            </div>
+        </div>
+   
+    </main>
+
+    <div class="overlay" id="overlay" onclick="hidePopup()"></div>
+
+    <div class="popup" id="popup">
+        <img id="popup-img" src="" alt="">
+        <h2 id="popup-title"></h2>
+        <p id="popup-origin"></p>
+        <p id="popup-description"></p>
+        <button class="popup-close" onclick="hidePopup()">Close</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Animal Catalog.</p>
+    </footer>
+
+    <script>
+        function showDetails(button) {
+            var card = button.closest('.item');
+            var imgSrc = card.getAttribute('data-src');
+            var title = card.getAttribute('data-title');
+            var origin = card.getAttribute('data-origin');
+            var description = card.getAttribute('data-description');
+
+            document.getElementById('popup-img').src = imgSrc;
+            document.getElementById('popup-title').innerText = title;
+            document.getElementById('popup-origin').innerText = origin;
+            document.getElementById('popup-description').innerText = description;
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
